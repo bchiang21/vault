@@ -12,15 +12,34 @@
 
 #include <unistd.h>
 
-void	ft_ft(int *nbr)
+void ft_ft(int *nbr)
 {
-	char nbr = '42';
+    *nbr = 42;
 }
 
-int main(void)
+void	ft_putnbr(int n)
 {
-	ft_ft();
-	return 0;
-	}
+    //write a recursion to output the digit 42
+    if (n < 10)
+    {
+       char digit = n + '0';
+       write(1, &digit, 1);
+    }
+    if (n >= 10)
+    {
+        ft_putnbr(n / 10);
+        char digit = ((n % 10) + '0');
+        write(1, &digit, 1);
+    }
+}
 
+/* int main(void)
+{
+  int x;
+  ft_ft(&x);
+  ft_putnbr(x);
+  write(1, "\n", 1);
 
+  return 0;
+}
+  */
