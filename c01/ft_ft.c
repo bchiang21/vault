@@ -6,12 +6,21 @@
 /*   By: bchiang <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/27 18:21:19 by bchiang           #+#    #+#             */
-/*   Updated: 2025/07/27 19:04:03 by bchiang          ###   ########.fr       */
+/*   Updated: 2025/07/28 13:13:52 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_ft(int *nbr);
+void	ft_ft(int *nbr)
+{
+	char nbr = '42';
+}
+
+int main(void)
+{
+	ft_ft();
+	return 0;
+	}
 
 
