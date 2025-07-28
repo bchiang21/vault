@@ -14,9 +14,10 @@
 
 void	ft_print_numbers(void)
 {
-	int num =0;
+	int	num;
 	char	c;
 
+	num = 0;
 	while (num <= 9)
 	{
 		c = '0' + num;
@@ -25,7 +26,8 @@ void	ft_print_numbers(void)
 	}
 }
 
-/* int 	main(void)
+/*
+int	main(void)
 {
 	ft_print_numbers();
 	return (0);
