@@ -12,6 +12,19 @@
 
 #include <unistd.h>
 
-void	ft_ft(int *nbr);
+void	ft_putnbr(int *nbr)
+{
+    *nbr = 42;
+}
 
+void ft_write_number(int n)
+{
 
+}
+
+int main(void)
+{
+   int x;
+    ft_putnbr(&x);
+    write(1, &x, 1);
+}
