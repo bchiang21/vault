@@ -6,7 +6,7 @@
 /*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 14:35:28 by bchiang           #+#    #+#             */
-/*   Updated: 2025/07/27 16:52:21 by bchiang          ###   ########.fr       */
+/*   Updated: 2025/07/29 17:36:17 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	ft_is_negative(int n)
 
 	positive = 'P';
 	negative = 'N';
-
 	if (n >= 0)
 	{
 		write(1, &positive, 1);

@@ -6,7 +6,7 @@
 /*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 14:05:36 by bchiang           #+#    #+#             */
-/*   Updated: 2025/07/27 16:51:57 by bchiang          ###   ########.fr       */
+/*   Updated: 2025/07/29 17:34:03 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_print_numbers(void)
 {
-	int	num;
+	int		num;
 	char	c;
 
 	num = 0;

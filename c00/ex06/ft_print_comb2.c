@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bchiang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 16:42:50 by bchiang           #+#    #+#             */
-/*   Updated: 2025/07/27 17:01:22 by bchiang          ###   ########.fr       */
+/*   Updated: 2025/07/29 17:27:44 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	print_comb2(void)
+void	ft_print_comb2(void)
 {
 	int	a;
 	int	b;
@@ -44,10 +44,9 @@ void	print_comb2(void)
 	}
 }
 
-/*
-int	main(void)
+/* int	main(void)
 {
-	print_comb2();
+	ft_print_comb2();
 	return (0);
 }
 */
