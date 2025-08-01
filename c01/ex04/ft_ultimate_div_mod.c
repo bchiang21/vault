@@ -1,36 +1,35 @@
-/* Create a function ft_ultimate_div_mod with the following prototype:
-void ft_ultimate_div_mod(int *a, int *b);
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/01 10:24:36 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/01 10:52:48 by bchiang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-This function divides the value pointed to by ‘a’ by the value pointed to by ‘b’. The
-result of the division is stored in the integer pointed to by ‘a’, while the remainder
-is stored in the integer pointed to by ‘b
-
-*/
-
-#include <stdio.h>
-
-void ft_ultimate_div_mod(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-    int div;
-    div = (*a / *b);
+	int	div;
+	int	mod;
 
-    int mod;
-    mod = (*a % *b);
-    
-    *a = div;
-    *b = mod;
-
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
 
-int main(void)
+/* #include <stdio.h>
+int	main(void)
 {
-    int	x = 10;
-    int	y = 5;
+	int	x;
+	int	y;
 
-ft_ultimate_div_mod(&x, &y);
-
-printf("%d, %d", x, y);
-
-    return(0);
-
-}
+	x = 10;
+	y = 5;
+	ft_ultimate_div_mod(&x, &y);
+	printf("%d, %d\n", x, y);
+	return (0);
+} */
