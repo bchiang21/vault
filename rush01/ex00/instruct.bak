@@ -1,0 +1,45 @@
+
+//Let's start the Skyscraper puzzle again, using these new guidelines:
+//Do not use if loops, instead use while loops.
+// No other functions allowed other than malloc and free
+
+// Use the following functions:
+
+int ft_clue_init()
+{
+    //initialise the clues that are parsed in by Main
+}
+
+int ft_put_num()
+{
+    //Function to write numbers
+}
+
+int ft_grid_init()
+{
+// Initialize grid
+// Loop to write numbers
+// Make sure numbers unique, 1234 both column and row
+}
+
+
+int ft_check_col()
+{
+    //Check columns top to down and down to top for number of buildings visible
+    //Set number of buildings in variable is_visible
+    //If is_visible = clue , then move on to next square
+    //If is_visible != clue, then loop to "brute force" until it is ==
+}
+
+int ft_check_row()
+{
+    //Check row left to right and right to left for number of buildings visible
+    //Set number of buildings in variable is_visible
+    //If is_visible = clue , then move on to next square
+    //If is_visible != clue, then loop to "brute force" until it is ==
+}
+
+int ft_solve()
+{
+    //write new 4x4 grid with correct answers
+}
