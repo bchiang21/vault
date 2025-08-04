@@ -94,9 +94,6 @@ int check_col(int grid[SIZE][SIZE], int clues[4][SIZE], int col)
 
 int solve(int grid[SIZE][SIZE], int clues[4][SIZE], int pos)
 {
-	if (pos == SIZE * SIZE)
-		return 1;
-
 	int row = pos / SIZE;
 	int col = pos % SIZE;
 
@@ -112,8 +109,10 @@ int solve(int grid[SIZE][SIZE], int clues[4][SIZE], int pos)
 			}
 			grid[row][col] = 0;
 		}
+		if (pos == SIZE * SIZE)
+		return 0;
 	}
-	return 0;
+	//return 0;
 }
 
 int main(int argc, char **argv)
