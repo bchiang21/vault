@@ -10,32 +10,66 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char *ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int	i;
+	unsigned int i = 0;
 
-	i = 0;
-	while (i < n)
+	while (i < n && src[i])
 	{
-		if (src[i])
-			dest[i] = src[i];
-		else
-			dest[i] = '\0';
+		dest[i] = src[i];
 		i++;
 	}
-	return (dest);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return dest;
 }
 
-/*
 #include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+
+// Helper to show nulls and actual copied content
+void	print_raw_bytes(char *str, unsigned int n)
+{
+	unsigned int i = 0;
+
+	printf("Raw bytes   : ");
+	while (i < n)
+	{
+		if (str[i] == '\0')
+			printf("\\0");
+		else
+			printf("%c", str[i]);
+		i++;
+	}
+	printf("\n");
+}
+
+// Test harness for ft_strncpy
+void	test(char *src, unsigned int n)
+{
+	char custom[50] = {0};
+
+	ft_strncpy(custom, src, n);
+
+	printf("Source      : \"%s\"\n", src);
+	printf("n           : %u\n", n);
+	printf("ft_strncpy  : \"%s\"\n", custom);
+	print_raw_bytes(custom, n);
+	printf("--------------------------\n");
+}
 
 int	main(void)
 {
-	char	x[] = "LifeUniverseEverything";
-	char	y[50] = {0};
+	test("LifeUniverseEverything", 4);     // Partial copy
+	test("Life", 4);                       // Exact copy
+	test("Life", 10);                      // Pad with '\0'
+	test("", 5);                           // Empty source string
+	test("Test", 0);                       // n = 0
+	test("AB\0CD", 5);                     // Embedded null
 
-	ft_strncpy(y, x, 4);
-	printf("%s\n", y);
-	return (0);
+	return 0;
 }
-*/

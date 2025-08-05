@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 int	ft_str_is_printable(char *str)
 {
 	int	i;
@@ -27,6 +25,7 @@ int	ft_str_is_printable(char *str)
 }
 
 /*
+#include <unistd.h>
 int	main(void)
 {
 	char	x[] = "NeverGonnaLetYouNull";
@@ -43,5 +42,4 @@ int	main(void)
 		write(1, "0\n", 2);
 
 	return (0);
-}
-*/
+} */
