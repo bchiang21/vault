@@ -10,25 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// Create a function that returns 1 if the given string contains only lowercase alphabetical characters and 0 if it contains any other character.
+#include <unistd.h>
 
-int ft_str_is_lowercase(char *str)
+int	ft_str_is_lowercase(char *str)
 {
-    int i = 0;
+	int	i;
 
-    while (str[i])
-    {
-        
-    }
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] < 'a' || str[i] > 'z')
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-int main(void)
+void	ft_putchar(char c)
 {
-
-    char x[] = "nevergonnaletyoudown";
-    char y[] = "nEvErGonnAGivEYouUp";
-
-    ft_str_is_lowercase(x);
-    ft_str_is_lowercase(y);
+	write(1, &c, 1);
 }
 
+/*
+int	main(void)
+{
+	char	x[] = "nevergonnaletyoudown";
+	char	y[] = "nEvErGonnAGivEYouUp";
+
+	ft_putchar(ft_str_is_lowercase(x) + '0');
+	write(1, "\n", 1);
+	ft_putchar(ft_str_is_lowercase(y) + '0');
+	write(1, "\n", 1);
+	return (0);
+}
+*/

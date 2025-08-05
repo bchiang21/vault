@@ -10,30 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-unsigned int i = 0;
+	unsigned int	i;
 
-while (i < n)
-{
-    if (src[i])
-        dest[i] = src[i];
-    else
-        dest[i] = '\0';
-    i++;
+	i = 0;
+	while (i < n)
+	{
+		if (src[i])
+			dest[i] = src[i];
+		else
+			dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
-return dest;
 
-}
-
+/*
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-    char x[] = "LifeUniverseEverything";
-    char y[50] = "{}";
+	char	x[] = "LifeUniverseEverything";
+	char	y[50] = {0};
 
-    ft_strncpy(y, x, 4);
-    printf("%s", y);
-
+	ft_strncpy(y, x, 4);
+	printf("%s\n", y);
+	return (0);
 }
+*/
