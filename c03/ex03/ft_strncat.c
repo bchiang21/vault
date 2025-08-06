@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/06 20:47:35 by bchiang           #+#    #+#             */
-/*   Updated: 2025/08/06 20:47:58 by bchiang          ###   ########.fr       */
+/*   Created: 2025/08/06 20:56:58 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/06 20:57:21 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(char *s1, char *s2)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
+	j = 0;
+	while (dest[i] != '\0')
 		i++;
+	while (j < nb && src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	return (s1[i] - s2[i]);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*
+#include <unistd.h>
 #include <stdio.h>
+
 int	main(void)
 {
-	char	*x = "nevergonnagive";
-	char	*y = "nevergonnaup";
-	int		result;
+	char	*sourceX = "must be cut off";
+	char	destY[23] = "The next line";
 
-	result = ft_strcmp(x, y);
-	printf("The difference is: %d\n", result);
+	ft_strncat(destY, sourceX, 10);
+	printf("%s\n", destY);
 	return (0);
 }
 */
