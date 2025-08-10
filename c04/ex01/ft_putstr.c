@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/08 16:31:44 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/08 16:32:03 by bchiang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /* Create a function that prints a string of characters to the standard output.
 The function should be prototyped as follows: void ft_putstr(char *str) */
 #include <unistd.h>

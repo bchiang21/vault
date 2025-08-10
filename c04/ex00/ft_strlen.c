@@ -1,8 +1,14 @@
-/*  Create a function that counts and returns the number of characters in a string. The function should be prototyped as follows:
-int ft_strlen(char *str); */
-
-#include <stdio.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/08 16:30:06 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/08 16:31:33 by bchiang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int ft_strlen(char *str)
 {
@@ -13,6 +19,10 @@ int ft_strlen(char *str)
     }
     return i;
 }
+
+
+#include <stdio.h>
+#include <unistd.h>
 
 int main(void)
 {
