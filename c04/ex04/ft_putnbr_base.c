@@ -12,12 +12,12 @@
 
 #include <unistd.h>
 
-static void	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-static int	base_valid_len(char *b)
+int	base_valid_len(char *b)
 {
 	int	i;
 	int	j;
@@ -43,7 +43,7 @@ static int	base_valid_len(char *b)
 	return (i);
 }
 
-static void	put_unsigned_base(unsigned int n, char *b, int blen)
+void	put_unsigned_base(unsigned int n, char *b, int blen)
 {
 	if (n >= (unsigned int)blen)
 		put_unsigned_base(n / (unsigned int)blen, b, blen);

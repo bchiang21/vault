@@ -5,13 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/08 16:32:53 by bchiang           #+#    #+#             */
-/*   Updated: 2025/08/08 16:33:10 by bchiang          ###   ########.fr       */
+/*   Created: 2025/08/10 21:25:47 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/10 21:26:07 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <ctype.h>
+
+int	ft_isspace(char c)
+{
+	if ((c >= 9 && c <= 13) || c == 32)
+		return (1);
+	return (0);
+}
 
 int	ft_atoi(char *str)
 {
@@ -20,49 +26,50 @@ int	ft_atoi(char *str)
 	int	result;
 
 	i = 0;
-	sign = 1;
-	result = 0;
-	while (isspace(str[i]))
+	while (ft_isspace(str[i]))
 		i++;
+	sign = 1;
 	while (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			sign = -sign;
 		i++;
 	}
+	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		result = (result * 10) + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	return (sign * result);
 }
 
-void	putnbr(int n)
+void	ft_putnbr(int n)
 {
+	int		nb;
 	char	c;
 
-	if (n < 0)
+	nb = n;
+	if (nb < 0)
 	{
 		write(1, "-", 1);
-		n = -n;
+		nb = -nb;
 	}
-	if (n >= 10)
-		putnbr(n / 10);
-	c = '0' + (n % 10);
+	if (nb >= 10)
+		ft_putnbr(nb / 10);
+	c = '0' + (nb % 10);
 	write(1, &c, 1);
 }
 
+/*
 int	main(int argc, char **argv)
 {
-	int	n;
-
 	if (argc != 2)
 	{
-		write(1, "Oi. One argument pls.\n", 23);
+		write(1, "Oi. One argument pls.\n", 22);
 		return (1);
 	}
-	n = ft_atoi(argv[1]);
-	putnbr(n);
+	ft_putnbr(ft_atoi(argv[1]));
 	return (0);
 }
+*/

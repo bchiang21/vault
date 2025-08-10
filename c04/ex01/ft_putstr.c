@@ -10,11 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Create a function that prints a string of characters to the standard output.
-Prototype: void ft_putstr(char *str);
-*/
-
 #include <unistd.h>
 
 void	ft_putstr(char *str)
