@@ -10,35 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i = 0;
-    while(str[i])
-    {
-        i++;
-    }
-    return i;
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
 }
 
-
+/*
 #include <stdio.h>
 #include <unistd.h>
 
-int main(void)
+int	main(void)
 {
-    char *x = "supercalifragilisticexpielidocious";
+	char	*x;
+	int		result;
 
-    ft_strlen(x);
-
-    char result = ft_strlen(x);
-
-    while(result)
-    {
-        int i = 0;
-    //printf("The string is: %d long", result);
-    fflush(stdout);
-    usleep(1000000);
-    }
- 
-
+	x = "supercalifragilisticexpielidocious";
+	result = ft_strlen(x);
+	printf("The string is: %d long\n", result);
+	return (0);
 }
+*/

@@ -12,96 +12,74 @@
 
 #include <unistd.h>
 
-/* putchar */
 static void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-/* strlen */
-int	ft_strlen(const char *s)
+static int	base_valid_len(char *b)
 {
-	int i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
+	int	i;
+	int	j;
 
-/* base validator: len >= 2, no +/-, no duplicates */
-int	base_is_valid(const char *base)
-{
-	int len;
-	int i;
-	int j;
-
-	if (!base)
+	if (!b)
 		return (0);
-	len = ft_strlen(base);
-	if (len < 2)
-		return (0);
-
 	i = 0;
-	while (i < len)
+	while (b[i])
 	{
-		if (base[i] == '+' || base[i] == '-')
+		if (b[i] == '+' || b[i] == '-' || b[i] <= 32 || b[i] > 126)
 			return (0);
 		j = i + 1;
-		while (j < len)
+		while (b[j])
 		{
-			if (base[i] == base[j])
+			if (b[i] == b[j])
 				return (0);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	if (i < 2)
+		return (0);
+	return (i);
+}
+
+static void	put_unsigned_base(unsigned int n, char *b, int blen)
+{
+	if (n >= (unsigned int)blen)
+		put_unsigned_base(n / (unsigned int)blen, b, blen);
+	ft_putchar(b[n % (unsigned int)blen]);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	long	n;          
-	int		blen;
-	char	buf[66];   
-	int		i;
+	int	blen;
 
-	if (!base || !base_is_valid(base))
-		return;
-
-	blen = ft_strlen(base);
-	n = (long)nbr;
-
-	if (n == 0)
-	{
-		ft_putchar(base[0]);
-		return;
-	}
-	if (n < 0)
+	blen = base_valid_len(base);
+	if (!blen)
+		return ;
+	if (nbr < 0)
 	{
 		ft_putchar('-');
-		n = -n;
+		put_unsigned_base((unsigned int)(-nbr), base, blen);
 	}
-
-	i = 0;
-	while (n > 0)
-	{
-		buf[i++] = base[n % blen];
-		n /= blen;
-	}
-	while (i-- > 0)
-		ft_putchar(buf[i]);
+	else
+		put_unsigned_base((unsigned int)nbr, base, blen);
 }
 
-/* quick demo */
-int main(void)
+/*
+int	main(void)
 {
-	char *hex = "0123456789ABCDEF";
-	int   n = 257;
+	char	*hex;
+	int		n;
 
-	ft_putnbr_base(n, hex);   /* prints 101 */
+	hex = "0123456789ABCDEF";
+	n = 257;
+	ft_putnbr_base(n, hex);
 	ft_putchar('\n');
-	ft_putnbr_base(-255, hex);/* prints -FF */
+	ft_putnbr_base(-255, hex);
 	ft_putchar('\n');
-	ft_putnbr_base(42, "01"); /* prints 101010 */
+	ft_putnbr_base(42, "01");
 	ft_putchar('\n');
-	return 0;
+	return (0);
 }
+*/
