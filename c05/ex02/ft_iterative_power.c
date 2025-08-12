@@ -8,23 +8,60 @@ Overflows do not need to be handled. By definition, 0 raised to the power of 0 s
 
 int ft_iterative_power(int nb, int power)
 {
-    int i = 0;
-    int result = nb;
-    while (i < power)
+    int result = 1;
+    if (power == 0)
     {
-      result = result * power;
-      return result;
-      i++;
+      return 0;
     }
-    return nb;
+
+    while (power)
+    {
+      result = result * nb;
+      power--;
+    }
+    return result;
 }
 
-int main(void)
+int my_atoi(char c)
 {
-    int x = 3;
-    int y = 5;
+  int i = 0;
+  while (c[i])
+  {
+  c[i] - '0';
+  i++;
+}
+}
 
-    ft_iterative_power(x, y);
+int main(int argc, char** argv)
+{
+  int x;
+  int y;
+  int i = 0;
 
-    printf("%d", y);
+  if (argc != 3)
+  {
+    write(1, "oi, enter two values",20);
+    return 0;
+  }
+
+  while (argv[1])
+  {
+
+  }
+    
+  while (argv[2])
+  {
+    *argv[2] - '0';
+    i++;
+  }
+  
+  //int x = *argv[1] - '0';
+
+
+  // int y = *argv[2] - '0';
+
+
+    int final  = ft_iterative_power(x, y);
+
+    printf("%i", final);
 }
