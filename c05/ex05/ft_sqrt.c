@@ -1,47 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 21:50:12 by bchiang           #+#    #+#             */
-/*   Updated: 2025/08/13 21:54:05 by bchiang          ###   ########.fr       */
+/*   Created: 2025/08/13 21:54:43 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/13 21:55:00 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_power(int nb, int power)
+int ft_sqrt(int nb)
 {
+    int i = 1;
+    int n;
+    int result;
 
-if (power < 0)
+    if (nb < 0)
+    {
+        return 0;
+    }
+
+while (i < nb)
 {
-    return 0;
+    result = i * i;
+    n = i;
+    if (result == nb)
+    {
+        return n;
+    }
+    i++;
+ }
+return 0;
 }
-if (power == 0)
-{
-    return 1;
-}
-    int result = ft_recursive_power(nb, power - 1);
-        result = result * nb;
-            return result ;
-}
-
-
 
 #include <stdio.h>
 
 int main(void)
 {
+    int x = 125;
 
-    int x = 2;
-    int y = 5;
-
-    
-
-    int ans = ft_recursive_power(x, y);
-
-    printf("%i", ans);
-
+    printf("%i", ft_sqrt(x));
 }
-
-

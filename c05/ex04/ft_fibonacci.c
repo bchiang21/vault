@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 21:50:12 by bchiang           #+#    #+#             */
-/*   Updated: 2025/08/13 21:54:05 by bchiang          ###   ########.fr       */
+/*   Created: 2025/08/13 21:54:17 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/13 21:54:32 by bchiang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_power(int nb, int power)
+int ft_fibonacci(int index)
 {
+ 
 
-if (power < 0)
-{
+   if (index < 0)
+   {
     return 0;
-}
-if (power == 0)
-{
-    return 1;
-}
-    int result = ft_recursive_power(nb, power - 1);
-        result = result * nb;
-            return result ;
-}
+   }
 
+   if (index == 0)
+   {
+    return 1;
+   }
+
+   return ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
+}
 
 
 #include <stdio.h>
@@ -33,15 +33,8 @@ if (power == 0)
 int main(void)
 {
 
-    int x = 2;
-    int y = 5;
+    int x = 5;
 
-    
-
-    int ans = ft_recursive_power(x, y);
-
-    printf("%i", ans);
+    printf("%i", ft_fibonacci(x));
 
 }
-
-

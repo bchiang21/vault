@@ -1,8 +1,14 @@
-
-// Factorial, but this time recursive
-
-#include <unistd.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/13 21:47:46 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/13 21:48:03 by bchiang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int ft_recursive_factorial(int nb)
 {
@@ -11,17 +17,18 @@ int ft_recursive_factorial(int nb)
     return 1;
    }
 
-   int sub = ft_recursive_factorial(nb -1);
-   int result = nb * sub;
-   printf("%d!= %d\n", nb, result);
+   int result = nb * ft_recursive_factorial(nb -1);
 
    return result;
 }
+
+
+#include <unistd.h>
+#include <stdio.h>
 
 int main(void)
 {
     int x = 5;
     
-    ft_recursive_factorial(x);
-
+    printf("%i", ft_recursive_factorial(x));
 }

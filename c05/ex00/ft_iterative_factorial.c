@@ -1,13 +1,14 @@
-
-/*  Create an iterated function that returns a number. 
-This number is the result of a factorial operation based on the number given as a parameter.
-> If the argument is not valid the function should return 0.
-> Overflows must not be handled, the function return will be undefined.
-*/
-
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bchiang <bchiang@student.42singapore.sg>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/13 21:47:07 by bchiang           #+#    #+#             */
+/*   Updated: 2025/08/13 22:01:01 by bchiang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 int ft_iterative_factorial(int nb)
 {
@@ -19,24 +20,18 @@ int ft_iterative_factorial(int nb)
     {
         i = i * nb;
         nb = nb - 1;
-        printf("%i \n", i);
     }
     return i;
 }
 
-int main(int argc, char **argv)
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main(void)
 {
     int x = 10;
     ft_iterative_factorial(x);
-
-   /* if (argc != 2)
-    {
-        write(1, "0", 1);
-        return 1;
-    }
-
-    int x = atoi(argv[1]);
-
-    ft_iterative_factorial(x);
-*/ 
+    
+    printf("%i", ft_iterative_factorial(x));
 }
