@@ -9,7 +9,13 @@ Overflows do not need to be handled. By definition, 0 raised to the power of 0 s
 int ft_iterative_power(int nb, int power)
 {
     int result = 1;
-    if (power == 0)
+
+    if (nb == 0 && power == 0)
+    {
+      return 1;
+    }
+
+   if (power < 0)
     {
       return 0;
     }
@@ -22,14 +28,17 @@ int ft_iterative_power(int nb, int power)
     return result;
 }
 
-int my_atoi(char c)
+int my_atoi(char *c)
 {
   int i = 0;
+  int result = 0;
+
   while (c[i])
   {
-  c[i] - '0';
+  result = (result * 10) + (c[i] - '0');
   i++;
-}
+  }
+  return result;
 }
 
 int main(int argc, char** argv)
@@ -44,20 +53,10 @@ int main(int argc, char** argv)
     return 0;
   }
 
-  while (argv[1])
-  {
+  x = my_atoi(argv[1]);
+  y = my_atoi(argv[2]);
 
-  }
-    
-  while (argv[2])
-  {
-    *argv[2] - '0';
-    i++;
-  }
-  
   //int x = *argv[1] - '0';
-
-
   // int y = *argv[2] - '0';
 
 
