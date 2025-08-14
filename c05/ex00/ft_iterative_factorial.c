@@ -10,28 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_iterative_factorial(int nb)
+int	ft_iterative_factorial(int nb)
 {
-    if (nb < 0)
-    return 0;
+	int	result;
 
-    int i = 1;
-    while (nb > 1)
-    {
-        i = i * nb;
-        nb = nb - 1;
-    }
-    return i;
+	result = 1;
+	if (nb < 0)
+	{
+		return (0);
+	}
+	while (nb > 1)
+	{
+		result = result * nb;
+		nb = nb - 1;
+	}
+	return (result);
 }
 
 #include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 
-int main(void)
+int	main(void)
 {
-    int x = 10;
-    ft_iterative_factorial(x);
-    
-    printf("%i", ft_iterative_factorial(x));
+	int	x;
+
+	x = 10;
+	printf("%i\n", ft_iterative_factorial(x));
+	return (0);
 }

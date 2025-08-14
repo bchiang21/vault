@@ -10,31 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_fibonacci(int index)
-{
- 
-
-   if (index < 0)
-   {
-    return 0;
-   }
-
-   if (index == 0)
-   {
-    return 1;
-   }
-
-   return ft_fibonacci(index - 1) + ft_fibonacci(index - 2);
-}
-
-
 #include <stdio.h>
 
-int main(void)
+int	ft_fibonacci(int index)
 {
+	if (index < 0)
+		return (0);
+	if (index == 0)
+		return (1);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+}
 
-    int x = 5;
+int	main(void)
+{
+	int	x;
 
-    printf("%i", ft_fibonacci(x));
-
+	x = 5;
+	printf("%i", ft_fibonacci(x));
+	return (0);
 }

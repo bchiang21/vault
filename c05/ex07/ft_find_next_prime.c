@@ -10,42 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_find_next_prime(int nb) 
+int	ft_find_next_prime(int nb)
 {
-    int n;
-    if (nb < 2) 
-    {
-        n = 2;
-    } else {
-        n = nb + 1;
-    }
+	int	n;
+	int	i;
+	int	prime;
 
-    while (1) {
-        int prime = 1;
-        int i = 2;
-
-        while (i <= n / i) { // look for a divisor that evenly divides n
-            if (n % i == 0) {
-                prime = 0;
-                break;
-            }
-            i++;
-        }
-
-        if (prime) 
-        {
-            return n;
-        }
-        n++;
-    }
+	n = 0;
+	i = 0;
+	prime = 0;
+	if (nb < 2)
+		n = 2;
+	else
+		n = nb;
+	while (1)
+	{
+		prime = 1;
+		i = 2;
+		while (i <= n / i)
+		{
+			if (n % i == 0)
+				prime = 0;
+			i = i + 1;
+		}
+		if (prime == 1)
+			return (n);
+		n = n + 1;
+	}
 }
 
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-int x = 5;
-printf("%i", ft_find_next_prime(x));
-// 2, 3, 5, 7, 11, 13, 17, 19, 23, and 29 
+	int	x;
 
+	x = 5;
+	printf("%i", ft_find_next_prime(x));
+	return (0);
 }

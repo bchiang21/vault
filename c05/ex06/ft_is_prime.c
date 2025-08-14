@@ -10,40 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
+	int	i;
 
-    int is_prime = 1;
-
-    if (nb <= 1) 
-    {
-        is_prime = 0;
-    }
-
-    else {
-        int i = 2;
-        while (i <= nb / i) 
-        {
-            if (nb % i == 0) 
-            { 
-                is_prime = 0; 
-                break; 
-            }
-            i++;
-            return is_prime;
-        } 
-    }
-    return 0;
+	if (nb <= 1)
+		return (0);
+	i = 2;
+	while (i <= nb / i)
+	{
+		if (nb % i == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }
-
 
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
+	int	x;
 
-    int x = 11;
-
-    printf("%i", ft_is_prime(x));
-
+	x = 11;
+	printf("%i", ft_is_prime(x));
+	return (0);
 }

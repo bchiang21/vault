@@ -10,25 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
-    if (nb == 1 || nb == 0)
-   {
-    return 1;
-   }
+	int	result;
 
-   int result = nb * ft_recursive_factorial(nb -1);
-
-   return result;
+	if (nb == 1 || nb == 0)
+		return (1);
+	result = nb * ft_recursive_factorial(nb - 1);
+	return (result);
 }
 
-
-#include <unistd.h>
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-    int x = 5;
-    
-    printf("%i", ft_recursive_factorial(x));
+	int	x;
+
+	x = 5;
+	printf("%i", ft_recursive_factorial(x));
+	return (0);
 }

@@ -10,59 +10,59 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_iterative_power(int nb, int power)
+int	ft_iterative_power(int nb, int power)
 {
-    int result = 1;
+	int	result;
 
-    if (nb == 0 && power == 0)
-    {
-      return 1;
-    }
-
-   if (power < 0)
-    {
-      return 0;
-    }
-
-    while (power)
-    {
-      result = result * nb;
-      power--;
-    }
-    return result;
-}
-
-int my_atoi(char *c)
-{
-  int i = 0;
-  int result = 0;
-
-  while (c[i])
-  {
-  result = (result * 10) + (c[i] - '0');
-  i++;
-  }
-  return result;
+	result = 1;
+	if (nb == 0 && power == 0)
+	{
+		return (1);
+	}
+	if (power < 0)
+	{
+		return (0);
+	}
+	while (power > 0)
+	{
+		result = result * nb;
+		power = power - 1;
+	}
+	return (result);
 }
 
 #include <stdio.h>
 #include <unistd.h>
-int main(int argc, char** argv)
+
+int	my_atoi(char *c)
 {
-  int x;
-  int y;
+	int	i;
+	int	result;
 
-  if (argc != 3)
-  {
-    write(1, "oi, enter two values",20);
-    return 0;
-  }
+	i = 0;
+	result = 0;
+	while (c[i] != '\0')
+	{
+		result = (result * 10) + (c[i] - '0');
+		i = i + 1;
+	}
+	return (result);
+}
 
-  x = my_atoi(argv[1]);
-  y = my_atoi(argv[2]);
+int	main(int argc, char **argv)
+{
+	int	x;
+	int	y;
+	int	final;
 
-
-    int final  = ft_iterative_power(x, y);
-
-    printf("%i", final);
+	if (argc != 3)
+	{
+		write(1, "oi, enter two values\n", 21);
+		return (0);
+	}
+	x = my_atoi(argv[1]);
+	y = my_atoi(argv[2]);
+	final = ft_iterative_power(x, y);
+	printf("%i\n", final);
+	return (0);
 }

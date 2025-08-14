@@ -10,38 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_power(int nb, int power)
-{
-
-if (power < 0)
-{
-    return 0;
-}
-if (power == 0)
-{
-    return 1;
-}
-    int result = ft_recursive_power(nb, power - 1);
-        result = result * nb;
-            return result ;
-}
-
-
-
 #include <stdio.h>
 
-int main(void)
+int	ft_recursive_power(int nb, int power)
 {
+	int	result;
 
-    int x = 2;
-    int y = 5;
-
-    
-
-    int ans = ft_recursive_power(x, y);
-
-    printf("%i", ans);
-
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	result = ft_recursive_power(nb, power - 1);
+	result = result * nb;
+	return (result);
 }
 
+int	main(void)
+{
+	int	x;
+	int	y;
+	int	ans;
 
+	x = 2;
+	y = 5;
+	ans = ft_recursive_power(x, y);
+	printf("%i", ans);
+	return (0);
+}

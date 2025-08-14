@@ -10,35 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-    int i = 1;
-    int n;
-    int result;
+	int	i;
+	int	n;
+	int	result;
 
-    if (nb < 0)
-    {
-        return 0;
-    }
-
-while (i < nb)
-{
-    result = i * i;
-    n = i;
-    if (result == nb)
-    {
-        return n;
-    }
-    i++;
- }
-return 0;
+	i = 1;
+	if (nb < 0)
+		return (0);
+	while (i < nb)
+	{
+		result = i * i;
+		n = i;
+		if (result == nb)
+			return (n);
+		i++;
+	}
+	return (0);
 }
 
 #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-    int x = 125;
+	int	x;
 
-    printf("%i", ft_sqrt(x));
+	x = 125;
+	printf("%i", ft_sqrt(x));
+	return (0);
 }
