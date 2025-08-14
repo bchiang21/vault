@@ -1,0 +1,23 @@
+
+
+check if my understanding is correct:
+
+ft_strcmp: checks if both strings contain the same character. if same, i++. If different, s1[i] - s2[i] and find out if the integer is positive or negative. If (s1[i] - s2[i]) is negative, it means s1 should come before s2, so no swap is needed.
+
+If it’s positive, s1 should come after s2, so swap is needed.
+
+ft_mywrite is just a helper to write the strings invoked.
+
+In main, swapped is a true/false switch. An outside loop is triggered first to check if there are any swaps made. if so, that means more swaps might be needed. it will continue until swapped = 0 so it can exit.
+
+the next while loop checks if the counter, set at 1 (because we want to ignore argv[0] for program name). If the counter is less than argc count (- 1 because the first argc is for the program), then check for the if condition.
+
+In the if condtion, If positive → swap (because argv[i] should come after argv[i+1]).
+
+If negative → do nothing (already in order).
+
+If zero → do nothing (identical strings).
+
+ then the swap function will be called in to use - this is the argv-tmp-argv+1 method. If a swap is done, the swap switch is set to 1 and the i counter is incremented to run the loop again. If no more swaps are needed, the counter remains as 0.
+
+finally, write the results using ft_mywrite.
