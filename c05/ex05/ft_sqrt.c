@@ -30,7 +30,7 @@ int	ft_sqrt(int nb)
 	return (0);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -39,4 +39,4 @@ int	main(void)
 	x = 125;
 	printf("%i", ft_sqrt(x));
 	return (0);
-}
+} */

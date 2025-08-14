@@ -39,7 +39,7 @@ int	ft_find_next_prime(int nb)
 	}
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -48,4 +48,4 @@ int	main(void)
 	x = 5;
 	printf("%i", ft_find_next_prime(x));
 	return (0);
-}
+} */

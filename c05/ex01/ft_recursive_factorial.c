@@ -20,7 +20,7 @@ int	ft_recursive_factorial(int nb)
 	return (result);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -29,4 +29,4 @@ int	main(void)
 	x = 5;
 	printf("%i", ft_recursive_factorial(x));
 	return (0);
-}
+} */

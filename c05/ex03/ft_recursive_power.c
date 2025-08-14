@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int	ft_recursive_power(int nb, int power)
 {
 	int	result;
@@ -25,6 +23,7 @@ int	ft_recursive_power(int nb, int power)
 	return (result);
 }
 
+/* #include <stdio.h>
 int	main(void)
 {
 	int	x;
@@ -36,4 +35,4 @@ int	main(void)
 	ans = ft_recursive_power(x, y);
 	printf("%i", ans);
 	return (0);
-}
+} */

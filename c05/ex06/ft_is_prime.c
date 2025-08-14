@@ -26,7 +26,7 @@ int	ft_is_prime(int nb)
 	return (1);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -35,4 +35,4 @@ int	main(void)
 	x = 11;
 	printf("%i", ft_is_prime(x));
 	return (0);
-}
+} */

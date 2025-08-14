@@ -31,7 +31,7 @@ int	ft_iterative_power(int nb, int power)
 	return (result);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <unistd.h>
 
 int	my_atoi(char *c)
@@ -65,4 +65,4 @@ int	main(int argc, char **argv)
 	final = ft_iterative_power(x, y);
 	printf("%i\n", final);
 	return (0);
-}
+} */
